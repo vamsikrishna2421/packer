@@ -3,7 +3,7 @@ Creating a packer image to use with vagrant and virtualbox.
   * image contains Docker , Go , Ruby , Vim , TCPDump , HTop , Tree.
   * OS to be upto date with patches
 
-ubuntu_simple.json
+ubuntu-simple.json
 
 	{
 	  "builders":[
