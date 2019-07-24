@@ -23,7 +23,12 @@ ubuntu-simple.json
 			"<esc><wait>",
 			"<esc><wait>",
 			"<enter><wait>",
-			"Welcome to packer",
+			"/install/vmlinuz",
+			"initrd=/install/initrd.gz",
+			"net.ifnames=0",
+			"auto-install/enable-true",
+			"debconf/priority=critical",
+			"preseed/url-http://{{.HTTPIP}}:{{>HTTPPort}}/ubuntu-16.10/preseed.cfg",
 			"<enter>"
 	       ],
 	       "ssh_timeout": "10m",
@@ -44,3 +49,7 @@ ubuntu-simple.json
 			}
 		]
 	}
+
+
+#packer validate json_files/ubuntu-simple.json
+#packer build json_files/ubuntu-simple.json
